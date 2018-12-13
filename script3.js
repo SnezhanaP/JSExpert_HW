@@ -1,0 +1,11 @@
+var test;
+console.log(test);
+test = true;
+console.log(test);
+test = 11;
+console.log(test);
+test = "some text";
+console.log(test);
+test = null;
+console.log(test);
+console.log(typeof(test));
