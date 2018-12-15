@@ -15,5 +15,5 @@ for (var i = 0; i < 15; i++) {
 	}
 	total += first + second;
 }
+total > 100 ? totalInner += "<br>Победа, вы набрали " + total + " очков" :  totalInner += "<br>Вы проиграли, у вас " + total + " очков"
 document.getElementById("result").innerHTML = totalInner;
-total > 100 ? elemResult.innerHTML += "<br>Победа, вы набрали " + total + " очков" :  elemResult.innerHTML += "<br>Вы проиграли, у вас " + total + " очков"
