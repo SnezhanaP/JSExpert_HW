@@ -1,8 +1,8 @@
-var btn = document.getElementById("play"),
+let btn = document.getElementById("play"),
 	player1 = document.getElementById("player1"),
 	player2 = document.getElementById("player2"),
-	winner = document.getElementById("result"),
-	firstResult = "камень",
+	winner = document.getElementById("result");
+const firstResult = "камень",
 	secondResult = "ножницы",
 	thirdResult = "бумага",
 	winnerText1 = "Выиграл первый игрок!",
@@ -29,10 +29,10 @@ function getNameById(player) {
 function determineWinner(play1, play2) {
 	if ((play1 === 1 && play2 === 2) || (play1 === 2 && play2 === 3) || (play1 === 3 && play2 === 1)) {
 		return 1;
-	} else if ((play2 === 1 && play1 === 2) || (play2 === 2 && play1 === 3) || (play2 === 3 && play1 === 1)) {
-				return 2;
+	} else if (play1 === play2) {
+				return 3;
 			} else {
-					return 3;
+					return 2;
 				}
 }
 
@@ -50,7 +50,7 @@ function printResult (print) {
 }
 
 function runGame() {
-	var playerResult1 = getPlayerResult(),
+	let playerResult1 = getPlayerResult(),
 		playerResult2 = getPlayerResult(),
 		winnerNumber = determineWinner(playerResult1, playerResult2);
 

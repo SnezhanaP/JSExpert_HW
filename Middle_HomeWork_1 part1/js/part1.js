@@ -1,29 +1,31 @@
 (function run() {
-    var total = 0,
+    let total = 0,
     	totalDices = "",
-    	totalResult = "",
-    	postfix = "<br>",
+    	totalResult = "";
+    const postfix = "<br>",
     	double = "Выпал дубль. Число ",
     	difference = "Большой разброс между костями. Разница составляет ",
     	firstDice = "Первая кость: ",
     	secondDice  = "  Вторая кость: ",
     	divResult = "end";
 
-    getRndNumber = () => Math.floor((Math.random() * 6) + 1);
-    setResult = (string, divId = "result") => divId === "result" ? totalDices += string : totalResult += string
-    showDices = () => setResult (firstDice + first + secondDice + second + postfix);
-    isBigDifference = () => {
+    let  getRndNumber = () => Math.floor((Math.random() * 6) + 1);
+    let  setResult = (string, divId = "result") => divId === "result" ? totalDices += string : totalResult += string
+    let  showDices = () => setResult (firstDice + first + secondDice + second + postfix);
+    let isBigDifference = () => {
     	if ((first < 3 && second > 4) || (second < 3 && first > 4)) {
     		setResult (difference + Math.abs(second - first) + postfix)
     	};
     };
-    isNumbersEqual = () => {
+    
+    let isNumbersEqual = () => {
     	if (first === second) {
     		setResult (double + first + postfix)
     	};
     };
-    countTotal = () => total += first + second;
-    saveTotal = () => total > 100 ? setResult ("Победа, вы набрали " + total + " очков", divResult) : setResult ("Вы проиграли, у вас " + total + " очков", divResult);
+    
+    let countTotal = () => total += first + second;
+    let saveTotal = () => total > 100 ? setResult ("Победа, вы набрали " + total + " очков", divResult) : setResult ("Вы проиграли, у вас " + total + " очков", divResult);
     function printResult() {
     	document.getElementById("result").innerHTML = totalDices;
     	document.getElementById(divResult).innerHTML = totalResult;
